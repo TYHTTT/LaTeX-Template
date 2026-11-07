@@ -26,3 +26,4 @@ tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texliv
 tlmgr update --self --all
 ```
 
+练习 TeX 排版的网站：[TeXnique](https://texnique.xyz/)
