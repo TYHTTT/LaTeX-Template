@@ -1,16 +1,5 @@
-## LaTeX build artifacts
-*.aux
-*.lof
-*.log
-*.lot
-*.fls
-*.out
-*.toc
-*.fmt
-*.fot
-*.cb
-*.cb2
-/*.pdf
+# LaTeX compilation output directory
+LaTeX-Builds/
 
 ## Bibliography (BibTeX/Biber)
 *.bbl
@@ -30,9 +19,6 @@
 *.acr
 *.alg
 *.glsdefs
-
-# LaTeX compilation output directory
-Build/
 
 ## Temporary/editor swap files
 *.swp
