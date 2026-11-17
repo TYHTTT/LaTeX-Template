@@ -1,16 +1,5 @@
 ## LaTeX build artifacts
-*.aux
-*.lof
-*.log
-*.lot
-*.fls
-*.out
-*.toc
-*.fmt
-*.fot
-*.cb
-*.cb2
-/*.pdf
+Build/
 
 ## Bibliography (BibTeX/Biber)
 *.bbl
