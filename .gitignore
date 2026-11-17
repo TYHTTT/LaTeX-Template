@@ -1,5 +1,5 @@
-## LaTeX build artifacts
-Build/
+# LaTeX compilation output directory
+LaTeX-Builds/
 
 ## Bibliography (BibTeX/Biber)
 *.bbl
