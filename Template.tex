@@ -1,6 +1,6 @@
 \documentclass[a4paper,AutoFakeBold={2.7},UTF8,zihao=5,twoside]{ctexart} %纸张大小A4，文本类型为ctexart
 
-%===============================================页面布局与段落格式===============================================%
+%====================页面布局与段落格式====================%
 \usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm,includefoot]{geometry}%页边距设置
 \raggedbottom %取消文字必须强制贴齐纸张底部
 \renewcommand{\baselinestretch}{1.5}%改变默认行距为1.5倍行距
@@ -8,14 +8,14 @@
 \setlength{\parindent}{2em}  % 设置首行缩进为2个汉字宽度
 
 
-%===============================================字体与标题格式===============================================%
+%====================字体与标题格式====================%
 \usepackage{fontspec}%字体设置宏包
 \setmainfont{Times New Roman}%英文设置为Times New Roman
 \ctexset{section={format={\songti \zihao{-2} \bfseries \centering},beforeskip = 0.5\baselineskip,afterskip = 0.5\baselineskip,},%section样式设置
-subsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt},%subsection样式设置
-subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt}} %subsubsection样式设置
+    subsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt},%subsection样式设置
+    subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt}} %subsubsection样式设置
 
-%===============================================数学公式与数学字体===============================================%
+%====================数学公式与数学字体====================%
 \usepackage{mathtools}%数学公式排版宏包
 \usepackage{amssymb}%数学字体宏包
 \usepackage{bbm}%提供\mathbbm字体
@@ -24,13 +24,13 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 \usepackage{mathrsfs}%允许使用\mathscr字体(花体字母)
 \DeclareFontFamily{U}{rsfs}{\skewchar\font127 }% 手动配置 rsfs 字体族，确保在不同字号下使用正确的光学尺寸字体文件
 \DeclareFontShape{U}{rsfs}{m}{n}{%
-<-6> rsfs5% <-6> rsfs5: 小于6pt使用rsfs5
-<6-8> rsfs7% <6-8> rsfs7: 6-8pt使用rsfs7
-<8-> rsfs10% <8-> rsfs10: 大于等于8pt使用rsfs10
+    <-6> rsfs5% <-6> rsfs5: 小于6pt使用rsfs5
+    <6-8> rsfs7% <6-8> rsfs7: 6-8pt使用rsfs7
+    <8-> rsfs10% <8-> rsfs10: 大于等于8pt使用rsfs10
 }{}
 \numberwithin{equation}{section}%公式按 section 编号
 
-%===============================================图片与题注===============================================%
+%====================图片与题注====================%
 \usepackage{graphicx}%图片宏包
 \usepackage{float}%浮动体宏包，强制让浮动体在Here位置
 \usepackage{subcaption}%子图宏包
@@ -40,7 +40,7 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 \DeclareCaptionFont{wuhao}{\zihao{5}}%为caption宏包定义wuhao命令
 \captionsetup{labelsep=space,font={wuhao,bf,songti},skip=5pt}%题注设置
 
-%===============================================表格排版===============================================%
+%====================表格排版====================%
 \usepackage{booktabs}%三线表宏包
 \usepackage{array}%表格宏包
 \usepackage{tabularray}%跨页表格宏包
@@ -56,25 +56,25 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 \DefTblrTemplate{capcont}{default}{}%将跨页后的表号（如“表1（续）”）设置为空
 \SetTblrTemplate{capcont}{default}%应用设置
 
-%===============================================页眉与页脚===============================================%
+%====================页眉与页脚====================%
 \usepackage{fancyhdr}%页眉页脚宏包
 % 设置页眉页脚样式
 \pagestyle{fancy}
 \fancyhf{} % 清空默认的页眉和页脚
 %-------------奇偶页眉设置-------------
 % 偶数页
-\fancyhead[CE]{偶数页页眉} 
+\fancyhead[CE]{偶数页页眉}
 % 奇数页
-\fancyhead[CO]{奇数页页眉} 
+\fancyhead[CO]{奇数页页眉}
 %-------------底部页码-------------
 \fancyfoot[C]{\thepage} % 底部居中显示页码
 \fancypagestyle{headonly}{
-  \fancyfoot{} % 这一句的作用是单独清空页脚
-  % 至于页眉，它会自动继承你之前写好的 fancy 奇偶页眉设置
+    \fancyfoot{} % 这一句的作用是单独清空页脚
+    % 至于页眉，它会自动继承你之前写好的 fancy 奇偶页眉设置
 }
 \setlength{\headheight}{14pt}%页眉高度稍微调大一点
 
-%===============================================代码排版与颜色===============================================%
+%====================代码排版与颜色====================%
 \usepackage{xcolor}%颜色处理宏包
 \usepackage{tcolorbox}%用于绘制带有背景色、圆角、边框的彩色盒子。
 \usepackage{listings}%代码高亮宏包
@@ -93,45 +93,45 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 \setmonofont{Consolas}%设置给代码环境用的等宽字体
 % 定义一个新的环境：code
 \newtcblisting{code}[1][]{
-  listing only,
-  breakable,
-  colback=codegray,        % 背景色
-  colframe=framegray,      % 边框色
-  boxrule=1pt,             % 边框粗细
-  arc=3pt,                 % 圆角大小
-  outer arc=3pt,
-  left=4pt, right=4pt, top=2pt, bottom=2pt, % 内部边距
-  listing options={
-	mathescape=true,%允许注释使用latex公式
-    basicstyle=\ttfamily\small, % 等宽字体和小字号
-    breaklines=true,            % 自动换行
-    keywordstyle=\color{keywordcolor}\bfseries,
-    stringstyle=\color{stringcolor},
-    commentstyle=\color{commentcolor},
-    showstringspaces=false,
-    language=#1,% 允许传入语言参数
-  }
+    listing only,
+    breakable,
+    colback=codegray,        % 背景色
+    colframe=framegray,      % 边框色
+    boxrule=1pt,             % 边框粗细
+    arc=3pt,                 % 圆角大小
+    outer arc=3pt,
+    left=4pt, right=4pt, top=2pt, bottom=2pt, % 内部边距
+    listing options={
+            mathescape=true,%允许注释使用latex公式
+            basicstyle=\ttfamily\small, % 等宽字体和小字号
+            breaklines=true,            % 自动换行
+            keywordstyle=\color{keywordcolor}\bfseries,
+            stringstyle=\color{stringcolor},
+            commentstyle=\color{commentcolor},
+            showstringspaces=false,
+            language=#1,% 允许传入语言参数
+        }
 }
 
-%===============================================算法伪代码环境===============================================%
+%====================算法伪代码环境====================%
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}%中文友好的算法环境
 \renewcommand{\algorithmcfname}{{\bfseries\songti 算法}}%algorithm2e 中文化
 \SetKwInput{KwIn}{{\bfseries\songti 输入}}
 \SetKwInput{KwOut}{{\bfseries\songti 输出}}
 \SetKwRepeat{Repeat}{{\bfseries\songti 重复}}{{\bfseries\songti 直到}}
 
-%===============================================超链接与参考文献===============================================%
+%====================超链接与参考文献====================%
 \usepackage[colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}%超链接宏包,消除外部网址链接，文内交叉引用链接，参考文献引用链接的方框，且将字色改为黑
 \hypersetup{hypertexnames=false}% 关闭 hyperref 使用页码生成超链接锚点的机制，改用内部唯一标识，避免页码重置时出现 "Object @page.1 already defined" 等重复锚点警告
 \usepackage[backend=biber, style=gb7714-2015]{biblatex} %引入现代化的 biblatex 宏包，style=gb7714-2015 符合国内论文规范
 \addbibresource{references.bib}% 指定外部的参考文献数据库文件(你需要新建一个 references.bib 文件)
 \defbibheading{centeredBib}[\bibname]{%封装一个自定义的参考文献标题样式(命名为 centeredBib)
-  \begingroup
-  % 临时强制让 section 标题居中、宋体、小二、加粗
-  \ctexset{section/format={\centering\songti\zihao{-2}\bfseries}}
-  \section*{#1}% 生成无编号的标题
-  \addcontentsline{toc}{section}{#1}% 将标题添加到目录中
-  \endgroup
+    \begingroup
+    % 临时强制让 section 标题居中、宋体、小二、加粗
+    \ctexset{section/format={\centering\songti\zihao{-2}\bfseries}}
+    \section*{#1}% 生成无编号的标题
+    \addcontentsline{toc}{section}{#1}% 将标题添加到目录中
+    \endgroup
 }
 
 %====================加入本项目中临时要使用的宏包====================%
@@ -158,30 +158,30 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 \vspace{-2cm}
 
 \begin{center}
-	\kaishu\zihao{-2}\bfseries 封面标题
+    \kaishu\zihao{-2}\bfseries 封面标题
 \end{center}
 
 \vspace{1cm}
 
 \begin{center}
-	\zihao{-2}\songti\bfseries 你的论文题目
+    \zihao{-2}\songti\bfseries 你的论文题目
 \end{center}
 
 \begin{center}
-	\zihao{-2}\bfseries Your Thesis Title
+    \zihao{-2}\bfseries Your Thesis Title
 \end{center}
 
 \vspace{2cm}
 
 \begin{center}
-	\zihao{-3}
-	学\qquad 院：\uline{\makebox[8cm][c]{\bfseries\songti 你的学院}} \\
-	专\qquad 业：\uline{\makebox[8cm][c]{\bfseries\songti 你的专业}}\\
-	班\qquad 级：\uline{\makebox[8cm][c]{\bfseries\songti 你的班级}}\\
-	学\qquad 号：\uline{\makebox[8cm][c]{\bfseries\songti 你的学号}} \\
-	学生姓名：\uline{\makebox[8cm][c]{\bfseries\songti 你的姓名}} \\
-	指导教师：\uline{\makebox[8cm][c]{\bfseries\songti 你的导师}} \\
-	完成时间：\uline{\makebox[8cm][c]{\bfseries\songti 你的日期}}
+    \zihao{-3}
+    学\qquad 院：\uline{\makebox[8cm][c]{\bfseries\songti 你的学院}} \\
+    专\qquad 业：\uline{\makebox[8cm][c]{\bfseries\songti 你的专业}}\\
+    班\qquad 级：\uline{\makebox[8cm][c]{\bfseries\songti 你的班级}}\\
+    学\qquad 号：\uline{\makebox[8cm][c]{\bfseries\songti 你的学号}} \\
+    学生姓名：\uline{\makebox[8cm][c]{\bfseries\songti 你的姓名}} \\
+    指导教师：\uline{\makebox[8cm][c]{\bfseries\songti 你的导师}} \\
+    完成时间：\uline{\makebox[8cm][c]{\bfseries\songti 你的日期}}
 \end{center}
 
 \clearpage
@@ -189,7 +189,7 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 %-----------------------------诚信承诺书---------------------------------%
 \thispagestyle{headonly}
 \begin{center}
-	{\kaishu\zihao{-2}\bfseries\ziju{1.5} 诚信承诺}
+    {\kaishu\zihao{-2}\bfseries\ziju{1.5} 诚信承诺}
 \end{center}
 
 \vspace{1cm}
@@ -199,8 +199,8 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 \vspace{1cm} % 和正文稍微空开一点点距离（可根据喜好调整）
 \noindent\hfill % \hfill 就像一个横向的弹簧，把后面的表格挤到页面最右边
 \begin{tabular}{ll}
-	\kaishu\bfseries 承诺人（签名）：& \quad \\[0.5cm]
-    & \kaishu\bfseries 年 \quad \kaishu\bfseries 月 \quad \kaishu\bfseries 日
+    \kaishu\bfseries 承诺人（签名）： & \quad                                                                \\[0.5cm]
+                              & \kaishu\bfseries 年 \quad \kaishu\bfseries 月 \quad \kaishu\bfseries 日
 \end{tabular}
 
 \clearpage
@@ -213,10 +213,10 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
     \let\oldbfseries\bfseries
     \renewcommand{\bfseries}{\songti\oldbfseries}   % 强制将目录里的加粗字体指向宋体加粗
     \renewcommand{\heiti}{\songti}                 % 强制将目录里的黑体全部替换为宋体
-    
+
     % --- 核心：强行给一级标题加上引导点，并保持宋体加粗 ---
     \renewcommand*\l@section[2]{\@dottedtocline{1}{0em}{1.5em}{\songti\bfseries #1}{\songti\bfseries #2}}
-    
+
     \tableofcontents%生成目录并居中
     \endgroup
     \makeatother % 关闭对 @ 符号的识别
@@ -228,17 +228,17 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 \renewcommand{\abstractname}{\bfseries\songti\zihao{-2}摘\qquad \bfseries\songti\zihao{-2}要}
 
 \begin{center}
-	\songti\zihao{-2}\bfseries 你的论文题目
+    \songti\zihao{-2}\bfseries 你的论文题目
 \end{center}
 
 \vspace{1cm}
 
 \begin{abstract}
-	\fangsong\zihao{-5}【{\bfseries\songti 摘要}】你的摘要
+    \fangsong\zihao{-5}【{\bfseries\songti 摘要}】你的摘要
 
-	\vspace{12pt}
+    \vspace{12pt}
 
-	\noindent【{\songti\bfseries 关键词}】你的关键词1；你的关键词2；你的关键词3；你的关键词4
+    \noindent【{\songti\bfseries 关键词}】你的关键词1；你的关键词2；你的关键词3；你的关键词4
 \end{abstract}
 \clearpage
 
@@ -246,17 +246,17 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 \renewcommand{\abstractname}{\zihao{-2}\bfseries Abstract}
 
 \begin{center}
-	\zihao{-2}\bfseries Your Thesis Title
+    \zihao{-2}\bfseries Your Thesis Title
 \end{center}
 
 \vspace{1cm}
 
 \begin{abstract}
-	\zihao{-5}【\textbf{ABSTRACT}】Your Abstract
+    \zihao{-5}【\textbf{ABSTRACT}】Your Abstract
 
-	\vspace{12pt}
+    \vspace{12pt}
 
-	\noindent【\textbf{KEYWORDS}】Your Keyword 1; Your Keyword 2; Your Keyword 3; Your Keyword 4
+    \noindent【\textbf{KEYWORDS}】Your Keyword 1; Your Keyword 2; Your Keyword 3; Your Keyword 4
 \end{abstract}
 \clearpage
 
@@ -291,9 +291,9 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 \subsection{单个子图}
 
 \begin{figure}[H]%H代表强制在Here位置
-	\centering
-	\includegraphics[width=0.5\linewidth]{Figures/时谐电流源J.pdf}
-	\caption{图名}\label{图名}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Figures/时谐电流源J.pdf}
+    \caption{图名}\label{图名}
 \end{figure}
 
 \subsection{多个子图(以2×2子图为例)}
@@ -314,7 +314,7 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
         \caption{SubFigure2}
         \label{fig:sub2}
     \end{subfigure}
-    
+
     \vspace{0.3cm} % 第一行和第二行之间的垂直间距
 
     % 第二行
@@ -331,7 +331,7 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
         \caption{SubFigure4}
         \label{fig:sub4}
     \end{subfigure}
-    
+
     \caption{2×2布局}
     \label{fig:main}
 \end{figure}
@@ -344,65 +344,65 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 首先展示单页表格：
 
 \begin{table}[htbp]%h:here当前位置,t:top页面顶部,b:bottom页面底部,p:page另放一页
-	\caption{表名}\label{表名}
-	\centering
-	\begin{tabular}{p{3cm}<{\centering} p{3cm}<{\centering} p{3cm}<{\centering} p{3cm}<{\centering}}
-		%p{3cm}规定列宽，\centering规定居中对其
-		\toprule[1.5pt]
-		1&2&3&4\\
-		\midrule[0.75pt]
-		内容&内容&内容&内容\\
-		内容&内容&内容&内容\\
-		内容&内容&内容&内容\\
-		\bottomrule[1pt]
-	\end{tabular}
+    \caption{表名}\label{表名}
+    \centering
+    \begin{tabular}{p{3cm}<{\centering} p{3cm}<{\centering} p{3cm}<{\centering} p{3cm}<{\centering}}
+        %p{3cm}规定列宽，\centering规定居中对其
+        \toprule[1.5pt]
+        1  & 2  & 3  & 4  \\
+        \midrule[0.75pt]
+        内容 & 内容 & 内容 & 内容 \\
+        内容 & 内容 & 内容 & 内容 \\
+        内容 & 内容 & 内容 & 内容 \\
+        \bottomrule[1pt]
+    \end{tabular}
 \end{table}
 
 \subsection{跨页表格}
 展示跨页表格：
 
 \begin{longtblr}[
-	caption={数据缺失值统计表},
-	label={数据缺失值统计表},
-	]{
-		% 列定义：Q类型，c=居中，4cm宽度
-		colspec = {Q[c,4cm] Q[c,4cm] Q[c,4cm]}, 
-		% 线条设置：使用 booktabs 风格
-		hline{1,Z} = {1pt},   % 第一行顶端(1)和最后一行底端(Z) 加粗线
-		hline{2}   = {0.5pt}, % 第一行下面(即表头下) 加细线
-		rowhead = 1, % 将第1行设为表头，跨页时自动重复
-}
+        caption={数据缺失值统计表},
+        label={数据缺失值统计表},
+    ]{
+        % 列定义：Q类型，c=居中，4cm宽度
+        colspec = {Q[c,4cm] Q[c,4cm] Q[c,4cm]},
+        % 线条设置：使用 booktabs 风格
+        hline{1,Z} = {1pt},   % 第一行顶端(1)和最后一行底端(Z) 加粗线
+        hline{2}   = {0.5pt}, % 第一行下面(即表头下) 加细线
+        rowhead = 1, % 将第1行设为表头，跨页时自动重复
+    }
     %表格内容
-    列名 & 非空单元格数量 & 数据类型 \\ % 这是第1行，会被自动作为表头
-    customerID        & 7043 & object  \\
-    gender            & 7043 & object  \\
-    SeniorCitizen     & 7043 & int64   \\
-    Partner           & 7043 & object  \\
-    Dependents        & 7043 & object  \\
-    tenure            & 7043 & int64   \\
-    PhoneService      & 7043 & object  \\
-    MultipleLines     & 7043 & object  \\
-    InternetService   & 7043 & object  \\
-    OnlineSecurity    & 7043 & object  \\
-    OnlineBackup      & 7043 & object  \\
-    DeviceProtection  & 7043 & object  \\
-    TechSupport       & 7043 & object  \\
-    StreamingTV       & 7043 & object  \\
-    StreamingMovies   & 7043 & object  \\
-    Contract          & 7043 & object  \\
-    PaperlessBilling  & 7043 & object  \\
-    PaymentMethod     & 7043 & object  \\
-    MonthlyCharges    & 7043 & float64 \\
-    TotalCharges      & 7043 & object  \\
-    Churn             & 7043 & object  \\
-    Churn             & 7043 & object  \\
-    Churn             & 7043 & object  \\
-    Churn             & 7043 & object  \\
-    Churn             & 7043 & object  \\
-    Churn             & 7043 & object  \\
-    Churn             & 7043 & object  \\
-    Churn             & 7043 & object  \\
-    Churn             & 7043 & object  \\
+    列名               & 非空单元格数量 & 数据类型    \\ % 这是第1行，会被自动作为表头
+    customerID       & 7043    & object  \\
+    gender           & 7043    & object  \\
+    SeniorCitizen    & 7043    & int64   \\
+    Partner          & 7043    & object  \\
+    Dependents       & 7043    & object  \\
+    tenure           & 7043    & int64   \\
+    PhoneService     & 7043    & object  \\
+    MultipleLines    & 7043    & object  \\
+    InternetService  & 7043    & object  \\
+    OnlineSecurity   & 7043    & object  \\
+    OnlineBackup     & 7043    & object  \\
+    DeviceProtection & 7043    & object  \\
+    TechSupport      & 7043    & object  \\
+    StreamingTV      & 7043    & object  \\
+    StreamingMovies  & 7043    & object  \\
+    Contract         & 7043    & object  \\
+    PaperlessBilling & 7043    & object  \\
+    PaymentMethod    & 7043    & object  \\
+    MonthlyCharges   & 7043    & float64 \\
+    TotalCharges     & 7043    & object  \\
+    Churn            & 7043    & object  \\
+    Churn            & 7043    & object  \\
+    Churn            & 7043    & object  \\
+    Churn            & 7043    & object  \\
+    Churn            & 7043    & object  \\
+    Churn            & 7043    & object  \\
+    Churn            & 7043    & object  \\
+    Churn            & 7043    & object  \\
+    Churn            & 7043    & object  \\
 \end{longtblr}
 
 \clearpage
@@ -412,75 +412,75 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 行内公式，$a+b=c$，希腊字母$\alpha\beta\gamma$，定积分$\int_{a}^{b} f(x)dx$，不定积分$\int f(x)dx$，
 \subsection{行间公式}
 \begin{equation}
-	S_{n}=\sum_{k=1}^{n} x_{k} \label{(1)}
+    S_{n}=\sum_{k=1}^{n} x_{k} \label{(1)}
 \end{equation}
 \begin{equation}
-	\alpha\left( x+y\right) =z
+    \alpha\left( x+y\right) =z
 \end{equation}
 方程组：
 \begin{equation}
-	\begin{cases}
-		x_{1}^{2}+y_{1}^2=a\\
-		x_{1}-y_{1}=b\\
-		x_{1}+y_{1}=c
-	\end{cases}
+    \begin{cases}
+        x_{1}^{2}+y_{1}^2=a \\
+        x_{1}-y_{1}=b       \\
+        x_{1}+y_{1}=c
+    \end{cases}
 \end{equation}
 分段函数：
 \begin{equation}
-	f(x)=
-	\begin{cases}
-		f_{1}(x) &x>a\\
-		f_{2}(x) &x<=a
-	\end{cases}
+    f(x)=
+    \begin{cases}
+        f_{1}(x) & x>a  \\
+        f_{2}(x) & x<=a
+    \end{cases}
 \end{equation}
 长公式：
 \begin{equation}
-	\begin{split}
-		f(x)&=1000000a+2000000b+30000c+400000d\\
-		&=1000000\alpha+200000\beta+3000000\gamma+40000\delta\\
-		&=\zeta+\eta+\theta+\lambda
-	\end{split}
+    \begin{split}
+        f(x) & =1000000a+2000000b+30000c+400000d                    \\
+             & =1000000\alpha+200000\beta+3000000\gamma+40000\delta \\
+             & =\zeta+\eta+\theta+\lambda
+    \end{split}
 \end{equation}
 
 普通矩阵
 \begin{equation}
-	\begin{bmatrix}
-		\varphi\\
-		\theta\\
-		\psi
-	\end{bmatrix}
-	=
-	\begin{bmatrix}
-		a_{11} & a_{12} & a_{13} \\
-		a_{21} & a_{22} & a_{23} \\
-		a_{31} & a_{32} & a_{33}
-	\end{bmatrix}
-	\begin{bmatrix}
-		x_{1} \\
-		x_{2} \\
-		x_{3}
-	\end{bmatrix}
+    \begin{bmatrix}
+        \varphi \\
+        \theta  \\
+        \psi
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        a_{11} & a_{12} & a_{13} \\
+        a_{21} & a_{22} & a_{23} \\
+        a_{31} & a_{32} & a_{33}
+    \end{bmatrix}
+    \begin{bmatrix}
+        x_{1} \\
+        x_{2} \\
+        x_{3}
+    \end{bmatrix}
 \end{equation}
 
 高维矩阵
 \begin{equation}
-	\begin{bmatrix}
-		a_{11} & a_{12} & \cdots & a_{1n} \\
-		a_{21} & a_{22} & \cdots & a_{2n} \\
-		\vdots & \vdots & \ddots & \vdots \\
-		a_{n1} & a_{n2} & \cdots & a_{nn}
-	\end{bmatrix}
+    \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        a_{21} & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn}
+    \end{bmatrix}
 \end{equation}
 
 行列式：
 \begin{equation}
-  \begin{vmatrix}
-    f_1(a_1) & f_1(a_2) & \cdots & f_1(a_n) \\
-    f_2(a_1) & f_2(a_2) & \cdots & f_2(a_n) \\
-    \vdots   & \vdots   &        & \vdots   \\
-    f_n(a_1) & f_n(a_2) & \cdots & f_n(a_n)
-  \end{vmatrix}
-  = 0
+    \begin{vmatrix}
+        f_1(a_1) & f_1(a_2) & \cdots & f_1(a_n) \\
+        f_2(a_1) & f_2(a_2) & \cdots & f_2(a_n) \\
+        \vdots   & \vdots   &        & \vdots   \\
+        f_n(a_1) & f_n(a_2) & \cdots & f_n(a_n)
+    \end{vmatrix}
+    = 0
 \end{equation}
 
 \clearpage
@@ -488,15 +488,15 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 \section{算法示例}
 
 \begin{algorithm}
-\caption{累加求和算法}
-\KwIn{正整数 $n$}
-\KwOut{$1$ 到 $n$ 的和}
+    \caption{累加求和算法}
+    \KwIn{正整数 $n$}
+    \KwOut{$1$ 到 $n$ 的和}
 
-初始化 $s \gets 0$\;
-\For{$i = 1$ \KwTo $n$}{
-    $s \gets s + i$\;
-}
-\Return $s$\;
+    初始化 $s \gets 0$\;
+    \For{$i = 1$ \KwTo $n$}{
+        $s \gets s + i$\;
+    }
+    \Return $s$\;
 \end{algorithm}
 
 \clearpage
@@ -516,10 +516,10 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 %--------------------------------附录--------------------------------%
 \appendix
 \ctexset{
-  section = {
-    number = \Alph{section},
-    name = {附录}
-  }
+    section = {
+      number = \Alph{section},
+      name = {附录}
+     }
 }%设置附录部分的一级标题格式
 
 \section{引用测试}
@@ -550,23 +550,23 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 
 高维矩阵
 \begin{equation}
-	\begin{bmatrix}
-		a_{11} & a_{12} & \cdots & a_{1n} \\
-		a_{21} & a_{22} & \cdots & a_{2n} \\
-		\vdots & \vdots & \ddots & \vdots \\
-		a_{n1} & a_{n2} & \cdots & a_{nn}
-	\end{bmatrix}
+    \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        a_{21} & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn}
+    \end{bmatrix}
 \end{equation}
 
 行列式：
 \begin{equation}
-  \begin{vmatrix}
-    f_1(a_1) & f_1(a_2) & \cdots & f_1(a_n) \\
-    f_2(a_1) & f_2(a_2) & \cdots & f_2(a_n) \\
-    \vdots   & \vdots   &        & \vdots   \\
-    f_n(a_1) & f_n(a_2) & \cdots & f_n(a_n)
-  \end{vmatrix}
-  = 0
+    \begin{vmatrix}
+        f_1(a_1) & f_1(a_2) & \cdots & f_1(a_n) \\
+        f_2(a_1) & f_2(a_2) & \cdots & f_2(a_n) \\
+        \vdots   & \vdots   &        & \vdots   \\
+        f_n(a_1) & f_n(a_2) & \cdots & f_n(a_n)
+    \end{vmatrix}
+    = 0
 \end{equation}
 
 \clearpage
@@ -574,8 +574,8 @@ subsubsection={format={\songti \zihao{5} \bfseries},beforeskip=0pt,afterskip=0pt
 \section{附录代码}
 
 \begin{code}[Python]
-# 这是一段 Python 代码演示
-def fetch_data(url):
+    # 这是一段 Python 代码演示
+    def fetch_data(url):
     """
     Fetch data from the given URL.
     """
@@ -587,7 +587,7 @@ def fetch_data(url):
 由于参考文献的排版使用了 biblatex 宏包，所以在有参考文献的情况下，需要的编译链为：
 
 \begin{equation*}
-	\text{XeLaTeX} \to \text{Biber} \to \text{XeLaTeX} \to \text{XeLaTeX}
+    \text{XeLaTeX} \to \text{Biber} \to \text{XeLaTeX} \to \text{XeLaTeX}
 \end{equation*}
 
 如果使用的是 Vscode + LaTeX Workshop插件，那么可以参考我的配置，见模板目录下的 settings.json 文件。
